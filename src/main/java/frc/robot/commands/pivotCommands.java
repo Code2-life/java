@@ -5,14 +5,14 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.pivotSubsystem;
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class pivotCommands extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   public final pivotSubsystem pivotCommand;
-  Joystick joystick = new Joystick(0);
+  CommandPS5Controller joystick = new CommandPS5Controller(0);
   /**
    * Creates a new ExampleCommand.
    *
