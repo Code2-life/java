@@ -33,7 +33,7 @@ public class pivotCommands extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      double bothwaysSpeed = joystick.getX();
+      double bothwaysSpeed = joystick.getRightY();
   }
 
   // Called once the command ends or is interrupted.
