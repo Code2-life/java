@@ -5,14 +5,14 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.pivotSubsystem;
-import edu.wpi.first.wpilibj2.command.button.CommandPS5Controller;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class pivotCommands extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   public final pivotSubsystem pivotCommand;
-  CommandPS5Controller joystick = new CommandPS5Controller(0);
+  Joystick joystick = new Joystick(0);
   /**
    * Creates a new ExampleCommand.
    *
@@ -33,7 +33,8 @@ public class pivotCommands extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      double bothwaysSpeed = joystick.getRightY();
+      double bothwaysSpeed = joystick.getX();
+      pivotCommand.pivot(bothwaysSpeed);
   }
 
   // Called once the command ends or is interrupted.
