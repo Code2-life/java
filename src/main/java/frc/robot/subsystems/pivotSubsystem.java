@@ -1,17 +1,18 @@
 package frc.robot.subsystems;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class pivotSubsystem extends SubsystemBase{
     // temporary device ID and motortype
-    public final CANSparkMax pivotMotor = new CANSparkMax(6, MotorType.kBrushless);
+    public final Spark pivotMotor = new Spark(6);
 
     public pivotSubsystem() {
-        pivotMotor.restoreFactoryDefaults();
     }
 
+    public void pivot(double speed) {
+        pivotMotor.set(speed);
+    }
     @Override
     public void periodic() {
 
